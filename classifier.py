@@ -19,14 +19,14 @@ from sklearn.metrics import confusion_matrix
 filename = Path(".src/horoscopes.xlsx")
 
 df = pd.read_excel(filename)
-df = df4.dropna()
+df = df.dropna()
 
 words = ["äôt","don","äì","äôs","Äôre", "äôt", "äôs", "Äì","Äôt", "Äôs" ]
 
 for word in words:
      df['Horoscope'] = df['Horoscope'].str.replace(word, ' ')
      
-df4= df4.sample(frac =1, random_state=42)
+df= df.sample(frac =1, random_state=42)
 #Remove stopwords
 stop = set(stopwords.words('english'))
 df['Horoscope'] = df['Horoscope'].str.lower()
